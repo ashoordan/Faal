@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120a24">
+<title>طالع امروزت</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap">
+<style>
+:root{--bg:#120a24;--panel:#221340;--panel2:#2d1b53;--ink:#f6f0ff;--mute:#a999c9;--c:#ff7a59}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:radial-gradient(120% 70% at 50% -10%,#35206a 0,var(--bg) 62%) fixed;color:var(--ink);display:flex;justify-content:center;padding:max(22px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom));position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(1.6px 1.6px at 22px 34px,#fff,transparent),radial-gradient(1px 1px at 96px 118px,#fffa,transparent),radial-gradient(1.4px 1.4px at 168px 64px,#fff9,transparent),radial-gradient(1px 1px at 60px 170px,#fff8,transparent);background-size:200px 200px;animation:tw 4s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.35}to{opacity:.95}}
+main{width:100%;max-width:430px;text-align:center;position:relative}
+h1{font-size:31px;font-weight:900;margin:14px 0 6px}
+.sub{color:var(--mute);margin:0 0 22px;line-height:1.9}
+#ball{width:176px;height:176px;margin:4px auto 20px;border-radius:50%;background:radial-gradient(circle at 34% 26%,#fff 0,rgba(255,255,255,0) 20%),radial-gradient(circle at 50% 55%,var(--c) 0,#3b1d7a 76%);box-shadow:0 0 70px color-mix(in srgb,var(--c) 55%,transparent),inset 0 -14px 30px rgba(0,0,0,.35);animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+#ball.shake{animation:shake .45s infinite}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) translateY(-4px)}75%{transform:rotate(8deg) translateY(-4px)}}
+.form{background:color-mix(in srgb,var(--panel) 85%,transparent);border:1px solid #3d2a6e;border-radius:22px;padding:18px;text-align:right}
+label{display:block;font-size:13px;color:var(--mute);margin:0 2px 5px}
+input,select,textarea{width:100%;font:inherit;font-size:17px;padding:13px;border-radius:14px;border:2px solid #4a3382;background:var(--panel);color:var(--ink);margin-bottom:13px}
+input[type=color]{padding:3px;height:48px}
+input[type=checkbox]{width:auto;margin:0 0 0 8px}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--c);border-color:transparent}
+.two{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+button{width:100%;font:inherit;font-weight:700;font-size:17px;padding:15px;border:0;border-radius:16px;background:var(--c);color:#1b0e2e;cursor:pointer;margin-top:10px}
+button.alt{background:transparent;color:var(--ink);border:2px solid #4a3382}
+button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.card{background:var(--panel);border-radius:26px;overflow:hidden;text-align:right;animation:pop .5s ease-out;border:1px solid #3d2a6e}
+@keyframes pop{from{transform:scale(.93);opacity:0}to{transform:none;opacity:1}}
+.band{background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 55%,#3b1d7a));color:#1b0e2e;padding:22px 22px 18px;position:relative;overflow:hidden}
+.band .g{position:absolute;left:-6px;top:-18px;font-size:120px;opacity:.22;line-height:1;font-family:"Segoe UI Symbol","Noto Sans Symbols",sans-serif}
+.band small{font-size:14px;font-weight:700;opacity:.85}
+.band h2{margin:4px 0 0;font-size:27px;font-weight:900;line-height:1.5;position:relative}
+.body{padding:18px 20px 22px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.chip{background:var(--panel2);border-radius:99px;padding:5px 12px;font-size:13px;color:#e4d8ff}
+.trait{font-size:14.5px;color:var(--mute);line-height:1.9;margin:0 0 14px}
+.body p.pred{margin:0 0 16px;font-size:17px;line-height:2}
+.rates{background:var(--panel2);border-radius:16px;padding:6px 14px;margin-bottom:12px}
+.rate{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px}
+.st{letter-spacing:3px;color:var(--c);font-size:16px}.st i{font-style:normal;color:#52407f}
+.stats{display:flex;gap:9px}
+.stat{flex:1;background:var(--panel2);border-radius:14px;padding:11px 4px;text-align:center}
+.stat b{display:block;font-size:20px;margin-top:2px}
+.stat span{font-size:12px;color:var(--mute)}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--c);vertical-align:middle;margin-top:3px}
+.power{margin-top:14px;font-size:14.5px;color:var(--mute);line-height:1.9}
+.power b{color:var(--ink)}
+.ad{margin:16px 0 4px;border-radius:20px;overflow:hidden;background:var(--panel);border:1px solid #3d2a6e;text-align:center;position:relative;display:block;color:inherit;text-decoration:none}
+.ad img{display:block;width:100%;height:auto}
+.ad .cta{display:block;background:var(--c);color:#1b0e2e;font-weight:700;font-size:15px;padding:11px}
+.ad .tag{position:absolute;top:8px;right:8px;background:#000a;color:#fff;font-size:11px;padding:3px 9px;border-radius:99px}
+.ad .ph{border:2px dashed #5b4496;border-radius:20px;margin:10px;padding:34px 12px;color:var(--mute);line-height:1.9;font-size:15px}
+.ad .ph b{display:block;color:var(--ink);font-size:17px}
+.foot{color:var(--mute);font-size:12.5px;margin-top:18px;line-height:1.9}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:#fff;color:#1b0e2e;padding:10px 18px;border-radius:12px;font-size:14px;font-weight:700;z-index:9}
+.note{background:#33205f;border-radius:14px;padding:12px 14px;font-size:13.5px;line-height:1.9;color:#d9ccf7;margin-bottom:14px;text-align:right}
+.thumb{max-width:100%;max-height:180px;border-radius:12px;display:block;margin:0 0 12px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<main id="m"></main>
+<script>
+const SIGNS=[
+["فروردین","حمل","♈","آتش","مریخ","عقیق سرخ","قوس","پرانرژی و جسوری. اول می‌پری، بعد نقشه می‌کشی."],
+["اردیبهشت","ثور","♉","خاک","زهره","زمرد","سنبله","آروم و قابل‌اعتماد. خوشمزه‌ترین لحظه‌ها رو می‌شناسی."],
+["خرداد","جوزا","♊","هوا","عطارد","عقیق یمانی","میزان","کنجکاو و بامزه. ذهنت همیشه سه قدم جلوتره."],
+["تیر","سرطان","♋","آب","ماه","مروارید","حوت","مهربون و شهودی. دل آدم‌ها رو زود می‌خونی."],
+["مرداد","اسد","♌","آتش","خورشید","کهربا","حمل","درخشان و بخشنده. هرجا باشی، جمع رو گرم می‌کنی."],
+["شهریور","سنبله","♍","خاک","عطارد","یشم","ثور","دقیق و کاربلد. جزئیاتی رو می‌بینی که بقیه رد می‌شن."],
+["مهر","میزان","♎","هوا","زهره","لاجورد","دلو","خوش‌سلیقه و عادل. تعادل رو بین آدم‌ها برمی‌گردونی."],
+["آبان","عقرب","♏","آب","پلوتون","عقیق سیاه","سرطان","عمیق و مرموز. وقتی تصمیم بگیری، تموم شده."],
+["آذر","قوس","♐","آتش","مشتری","فیروزه","شیر","ماجراجو و خوش‌بین. دنیا برات یک جاده‌ی بازه."],
+["دی","جدی","♑","خاک","زحل","اونیکس","ثور","سخت‌کوش و استوار. صبر می‌کنی و آخرش می‌بری."],
+["بهمن","دلو","♒","هوا","اورانوس","آمتیست","جوزا","مستقل و خلاق. ایده‌هات یک قدم از زمونه جلوتره."],
+["اسفند","حوت","♓","آب","نپتون","آکوامارین","عقرب","رویاپرداز و دل‌نازک. تخیلت کارخونه‌ی ایده‌ست."]];
+const TITLES=["کاشف شب‌های بی‌خواب","رئیس بی‌تاج و تخت","استاد نیم‌ساعت آخر","شکارچی فرصت‌های نیمه‌شب","پادشاه تصمیم‌های آخرسر","نابغه‌ی پنهان جمع","مسئول خنده‌ی رسمی دورهمی","معمار نقشه‌های نصفه‌کاره","جادوگر چای و ایده","فیلسوف ترافیک","کارآفرین ایده‌های ساعت سه صبح","نگهبان آخرین تکه‌ی غذا"];
+const PRED=["امروز یک پیام غیرمنتظره می‌گیری که حالت رو خوب می‌کنه.","ایده‌ای که دیشب نصفه موند، امروز خودش کامل می‌شه.","یک نفر امروز بی‌دلیل از تو تعریف می‌کنه. قبولش کن.","تصمیمی که عقب انداختی، امروز زمان درستشه.","امروز شانس با کسیه که اول حرف بزنه.","یک خبر خوب از جایی می‌رسه که انتظارش رو نداشتی.","کاری که ازش می‌ترسیدی، از چیزی که فکر می‌کنی آسون‌تره.","یک مکالمه‌ی کوتاه امروز، مسیر هفته‌ات رو عوض می‌کنه.","امروز بهترین ایده‌هات وقتی میاد که دنبالش نباشی.","یک دوست قدیمی بهت فکر می‌کنه. زنگ بزن.","لازم نیست همه‌چیز کامل باشه. شروع کن، بقیه درست می‌شه.","یک اتفاق ساده، امشب بهونه‌ی خنده‌ی بزرگی می‌شه."];
+const POWER=["تشخیص بهترین ساندویچ از بوی خیابون","پیدا کردن جای پارک در لحظه‌ی آخر","دیدن فرصت جایی که بقیه مشکل می‌بینن","خنداندن آدم‌های جدی","حل کردن هر بحث با یک جمله‌ی بامزه","الهام گرفتن وسط کار نکردن","انرژی گرفتن از شلوغی"];
+const COLORS=[["نارنجی آتشین","#ff7a59"],["صورتی شکوفه","#ff6fae"],["زرد زعفرانی","#f5b82e"],["فیروزه‌ای","#2fd6c1"],["آبی یخی","#59b8ff"],["بنفش شب","#b084ff"],["سبز نعنایی","#6ee59a"],["مرجانی","#ff5f6d"]];
+const ANIMALS=[
+["موش","🐭","زیرک و سریع‌الانتقال. هر فرصتی رو زودتر از بقیه می‌بویی.","نهنگ"],
+["گاو","🐮","صبور و پرتلاش. آروم می‌ری ولی همیشه می‌رسی.","مرغ"],
+["پلنگ","🐆","شجاع و جذاب. وارد که بشی، همه نگاه می‌کنن.","اسب"],
+["خرگوش","🐰","مهربون و باملاحظه. آرامش رو با خودت می‌آری.","خوک"],
+["نهنگ","🐋","بزرگ‌اندیش و پرانرژی. برای کارهای بزرگ ساخته شدی.","میمون"],
+["مار","🐍","عمیق و باهوش. کم‌حرف، ولی همیشه یک قدم جلوتری.","مرغ"],
+["اسب","🐴","آزاد و پرجنب‌وجوش. حرکت و جاده بهت جون می‌ده.","سگ"],
+["گوسفند","🐑","خلاق و دل‌نرم. هنر و آرامش نصیبته.","خوک"],
+["میمون","🐵","شوخ و بااستعداد. هر مشکلی رو با یک ترفند حل می‌کنی.","موش"],
+["مرغ","🐓","دقیق و خوش‌ظاهر. صبح‌ها بهترین ایده‌هات میاد.","گاو"],
+["سگ","🐶","وفادار و صادق. رفیق واقعی همه‌ی جمعی.","پلنگ"],
+["خوک","🐷","سخاوتمند و خوش‌گذرون. زندگی رو با دل‌گرمی می‌چشی.","خرگوش"]];
+const NOWY=(()=>{try{const y=parseInt(new Date().toLocaleDateString("fa-IR-u-nu-latn",{year:"numeric"}));return y>1300&&y<1600?y:1405}catch(e){return 1405}})();
+const animOf=y=>ANIMALS[(((y-1399)%12)+12)%12];
+const DEF={siteTitle:"طالع امروزت",tagline:"روز، ماه و سال تولدت رو بگو تا ستاره‌ها و حیوان سالت بگن امروز چه خبره.",accent:"#ff7a59",adEnabled:true,adTitle:"جایگاه تبلیغ شما",adImage:"",adLink:"",extraPredictions:[],footer:""};
+let CFG={...DEF},cur=null,preview=false;
+const $=document.getElementById("m");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>s.trim().replace(/\s+/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/\|/g,"").slice(0,30);
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+const safeLink=u=>{u=(u||"").trim();if(/^(https?:|tel:|mailto:)/i.test(u))return u;return /^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(u)?"https://"+u:""};
+function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const pick=(r,a)=>a[Math.floor(r()*a.length)];
+const setC=c=>document.documentElement.style.setProperty("--c",c);
+function toast(t){const d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1900)}
+const stars=n=>'<span class="st">'+"★".repeat(n)+"<i>"+"★".repeat(5-n)+"</i></span>";
+
+async function loadCfg(){
+  try{const r=await fetch("config.json?"+Date.now());if(r.ok)Object.assign(CFG,await r.json())}catch(e){}
+  try{const p=localStorage.getItem("fal-preview");if(p){Object.assign(CFG,JSON.parse(p));preview=true}}catch(e){}
+  document.title=CFG.siteTitle;
+}
+function reading(name,m,d,y){
+  const day=new Date().toLocaleDateString("en-CA");
+  const r=rng(hash([name,m,d,y||0,day].join("|")));
+  const s=SIGNS[m],col=pick(r,COLORS);
+  const preds=PRED.concat((CFG.extraPredictions||[]).filter(Boolean));
+  return{name,m,d,y,anim:y?animOf(y):null,sign:s,third:d<=10?"اوایل":d<=20?"اواسط":"اواخر",title:pick(r,TITLES),pred:pick(r,preds),power:pick(r,POWER),
+   colName:col[0],col:col[1],num:1+Math.floor(r()*99),energy:55+Math.floor(r()*45),love:2+Math.floor(r()*4),work:2+Math.floor(r()*4),money:2+Math.floor(r()*4)};
+}
+function adHTML(){
+  if(!CFG.adEnabled)return"";
+  const l=safeLink(CFG.adLink);
+  const inner=CFG.adImage?'<span class="tag">تبلیغات</span><img src="'+esc(CFG.adImage)+'" alt="'+esc(CFG.adTitle)+'">'
+    :'<div class="ph"><b>'+esc(CFG.adTitle)+'</b>اینجا پوستر تبلیغاتی شما نمایش داده می‌شه</div>';
+  return l?'<a class="ad" href="'+esc(l)+'" target="_blank" rel="noopener sponsored">'+inner+'<span class="cta">مشاهده در سایت ←</span></a>':'<div class="ad">'+inner+'</div>';
+}
+const footHTML=()=>CFG.footer?'<div class="foot">'+esc(CFG.footer)+'</div>':"";
+
+function home(){
+  setC(CFG.accent);
+  let me={};try{me=JSON.parse(localStorage.getItem("fal-me"))||{}}catch(e){}
+  const mo=SIGNS.map((s,i)=>'<option value="'+i+'"'+(me.m===i?" selected":"")+'>'+s[0]+" — "+s[2]+"&#xFE0E; "+s[1]+'</option>').join("");
+  let dy="";for(let i=1;i<=31;i++)dy+='<option value="'+i+'"'+(me.d===i?" selected":"")+'>'+fa(i)+'</option>';
+  let yr="";for(let i=NOWY;i>=1320;i--)yr+='<option value="'+i+'"'+((me.y||1375)===i?" selected":"")+'>'+fa(i)+" — سال "+animOf(i)[0]+'</option>';
+  $.innerHTML='<div id="ball"></div><h1>'+esc(CFG.siteTitle)+'</h1><p class="sub">'+esc(CFG.tagline)+'</p>'
+   +'<div class="form"><label for="n">اسم</label><input id="n" maxlength="30" autocomplete="off" placeholder="اسم تو" value="'+esc(me.name||"")+'">'
+   +'<div class="two"><div><label for="mo">ماه تولد</label><select id="mo">'+mo+'</select></div><div><label for="dy">روز</label><select id="dy">'+dy+'</select></div></div><label for="yr">سال تولد (شمسی)</label><select id="yr">'+yr+'</select>'
+   +'<button id="go" style="margin-top:2px">طالعم رو بگو</button></div>'+adHTML()+footHTML();
+  document.getElementById("go").onclick=()=>{
+    const name=norm(document.getElementById("n").value);
+    if(!name){toast("اول اسمت رو بنویس");return}
+    const m=+document.getElementById("mo").value,d=+document.getElementById("dy").value,y=+document.getElementById("yr").value;
+    try{localStorage.setItem("fal-me",JSON.stringify({name,m,d,y}))}catch(e){}
+    document.getElementById("ball").classList.add("shake");
+    setTimeout(()=>show(name,m,d,y),1400);
+  };
+}
+function yearLine(a){
+  const ya=animOf(NOWY);
+  if(a[0]===ya[0])return"<br>امسال سال "+ya[0]+" است، یعنی سال خودته. انرژی‌ت چند برابره.";
+  if(a[3]===ya[0])return"<br>با انرژی امسال (سال "+ya[0]+") هماهنگی خوبی داری.";
+  return"";
+}
+function show(name,m,d,y,shared){
+  const c=cur=reading(name,m,d,y);
+  setC(c.col);window.scrollTo(0,0);
+  $.innerHTML='<div class="card"><div class="band"><span class="g">'+c.sign[2]+'&#xFE0E;</span><small>طالع امروز '+esc(c.name)+'</small><h2>'+esc(c.title)+'</h2></div><div class="body">'
+   +'<div class="chips"><span class="chip">برج '+c.sign[1]+'</span><span class="chip">'+c.third+' '+c.sign[0]+'</span><span class="chip">عنصر '+c.sign[3]+'</span><span class="chip">سیاره '+c.sign[4]+'</span><span class="chip">سنگ '+c.sign[5]+'</span>'+(c.anim?'<span class="chip">'+c.anim[1]+' سال '+c.anim[0]+'</span>':"")+'</div>'
+   +'<p class="trait">'+esc(c.sign[7])+'<br>بهترین هم‌نفس: <b>'+c.sign[6]+'</b>'+(c.anim?'<br>'+c.anim[1]+' '+esc(c.anim[2])+'<br>هم‌سال خوب: <b>'+c.anim[3]+'</b>'+yearLine(c.anim):"")+'</p>'
+   +'<p class="pred">'+esc(c.pred)+'</p>'
+   +'<div class="rates"><div class="rate"><span>عشق</span>'+stars(c.love)+'</div><div class="rate"><span>کار</span>'+stars(c.work)+'</div><div class="rate"><span>پول</span>'+stars(c.money)+'</div></div>'
+   +'<div class="stats"><div class="stat"><span>عدد شانس</span><b>'+fa(c.num)+'</b></div><div class="stat"><span>رنگ امروز</span><b><i class="dot"></i></b></div><div class="stat"><span>انرژی</span><b>٪'+fa(c.energy)+'</b></div></div>'
+   +'<div class="power"><b>ابرقدرت:</b> '+esc(c.power)+'</div></div></div>'
+   +adHTML()
+   +'<button id="sh">فرستادن برای دوستت</button><button class="alt" id="img">ذخیره به‌صورت تصویر</button><button class="alt" id="again">'+(shared?"طالع خودت رو ببین":"نفر بعدی")+'</button>'+footHTML();
+  history.replaceState(null,"","#"+encodeURIComponent(name)+"|"+m+"|"+d+"|"+y);
+  document.getElementById("sh").onclick=share;
+  document.getElementById("img").onclick=saveImg;
+  document.getElementById("again").onclick=()=>{history.replaceState(null,"",location.pathname+location.search);home()};
+}
+async function share(){
+  const url=location.href,text="طالع امروز "+cur.name+" (برج "+cur.sign[1]+(cur.anim?"، سال "+cur.anim[0]:"")+"): "+cur.title;
+  if(navigator.share){try{await navigator.share({title:CFG.siteTitle,text,url})}catch(e){}}
+  else{try{await navigator.clipboard.writeText(url);toast("لینک کپی شد")}catch(e){prompt("لینک:",url)}}
+}
+function wrap(x,t,w){const ws=t.split(" "),L=[];let l="";for(const a of ws){const q=l?l+" "+a:a;if(x.measureText(q).width>w&&l){L.push(l);l=a}else l=q}if(l)L.push(l);return L}
+async function saveImg(){
+  try{await document.fonts.load("900 40px Vazirmatn");await document.fonts.load("400 40px Vazirmatn")}catch(e){}
+  const c=cur,W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
+  const x=cv.getContext("2d");x.direction="rtl";x.textAlign="center";
+  const g=x.createRadialGradient(W/2,0,100,W/2,0,H);g.addColorStop(0,"#35206a");g.addColorStop(.6,"#120a24");g.addColorStop(1,"#120a24");
+  x.fillStyle=g;x.fillRect(0,0,W,H);
+  for(let i=0;i<70;i++){x.fillStyle="rgba(255,255,255,"+(.2+.6*((i*37)%10)/10)+")";x.fillRect((i*197)%W,(i*113)%H,2,2)}
+  const F="Vazirmatn,Tahoma,sans-serif";
+  x.fillStyle=c.col;x.beginPath();x.roundRect(80,130,920,1040,48);x.fill();
+  x.fillStyle="#221340";x.beginPath();x.roundRect(80,430,920,740,[0,0,48,48]);x.fill();
+  x.save();x.globalAlpha=.22;x.fillStyle="#1b0e2e";x.font="260px sans-serif";x.textAlign="left";x.fillText(c.sign[2]+"\uFE0E",110,380);x.restore();
+  x.fillStyle="#1b0e2e";x.font="700 36px "+F;x.fillText("طالع امروز "+c.name+" · برج "+c.sign[1]+(c.anim?" · سال "+c.anim[0]:""),W/2,210);
+  x.font="900 68px "+F;wrap(x,c.title,800).slice(0,2).forEach((t,i)=>x.fillText(t,W/2,310+i*82));
+  x.fillStyle="#f6f0ff";x.font="400 44px "+F;wrap(x,c.pred,780).slice(0,4).forEach((t,i)=>x.fillText(t,W/2,540+i*74));
+  const sy=880;
+  [["عدد شانس",fa(c.num)],["رنگ امروز",c.colName],["انرژی","٪"+fa(c.energy)]].forEach((s,i)=>{
+    const cx=W/2+(1-i)*290;x.fillStyle="#2d1b53";x.beginPath();x.roundRect(cx-130,sy,260,150,24);x.fill();
+    x.fillStyle="#a999c9";x.font="400 28px "+F;x.fillText(s[0],cx,sy+48);
+    x.fillStyle=i===1?c.col:"#f6f0ff";x.font="900 "+(i===1?32:50)+"px "+F;x.fillText(s[1],cx,sy+112);
+  });
+  x.fillStyle="#a999c9";x.font="400 32px "+F;x.fillText("ابرقدرت: "+c.power,W/2,1100);
+  x.font="400 30px "+F;x.fillText(location.host+location.pathname,W/2,1260);
+  cv.toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="taleh-"+c.name+".png";a.click()});
+}
+
+/* ---------- admin (?admin) ---------- */
+function admin(){
+  setC(CFG.accent);
+  const v=k=>esc(CFG[k]||"");
+  $.innerHTML='<h1>مدیریت</h1><p class="sub">تنظیمات صفحه</p>'
+   +'<div class="note">تغییرها اول فقط روی همین گوشی «پیش‌نمایش» می‌شن. برای اینکه همه ببینن، فایل <b>config.json</b> رو دانلود کن و توی GitHub جای فایل قبلی آپلود کن.</div>'
+   +'<div class="form"><label>عنوان سایت</label><input id="a_siteTitle" value="'+v("siteTitle")+'">'
+   +'<label>جمله‌ی زیر عنوان</label><input id="a_tagline" value="'+v("tagline")+'">'
+   +'<label>رنگ اصلی</label><input type="color" id="a_accent" value="'+esc(CFG.accent)+'">'
+   +'<label><input type="checkbox" id="a_adEnabled"'+(CFG.adEnabled?" checked":"")+'> نمایش جایگاه تبلیغ</label>'
+   +'<label>عنوان جایگاه تبلیغ (وقتی پوستر نیست)</label><input id="a_adTitle" value="'+v("adTitle")+'">'
+   +'<label>آدرس سایتی که با کلیک روی پوستر باز می‌شه (مثلاً example.ir)</label><input id="a_adLink" dir="ltr" value="'+v("adLink")+'">'
+   +'<label>پوستر</label><input type="file" id="a_file" accept="image/*"><div id="a_prev">'+(CFG.adImage?'<img class="thumb" src="'+esc(CFG.adImage)+'" alt="">':"")+'</div>'
+   +'<button class="alt" id="a_clr" style="margin-top:0;margin-bottom:13px">حذف پوستر</button>'
+   +'<label>پیش‌بینی‌های اضافه (هر خط یک جمله)</label><textarea id="a_extra" rows="4">'+esc((CFG.extraPredictions||[]).join("\n"))+'</textarea>'
+   +'<label>متن پایین صفحه</label><input id="a_footer" value="'+v("footer")+'"></div>'
+   +'<button id="a_prevb">پیش‌نمایش روی این گوشی</button><button class="alt" id="a_dl">دانلود config.json</button><button class="alt" id="a_reset">پاک کردن پیش‌نمایش</button><button class="alt" id="a_back">دیدن سایت</button>';
+  const G=id=>document.getElementById(id);
+  const read=()=>({siteTitle:G("a_siteTitle").value||DEF.siteTitle,tagline:G("a_tagline").value,accent:G("a_accent").value,adEnabled:G("a_adEnabled").checked,
+    adTitle:G("a_adTitle").value,adLink:G("a_adLink").value.trim(),adImage:CFG.adImage||"",
+    extraPredictions:G("a_extra").value.split("\n").map(s=>s.trim()).filter(Boolean),footer:G("a_footer").value});
+  G("a_file").onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const im=new Image();im.onload=()=>{
+      const s=Math.min(1,900/im.width),cv=document.createElement("canvas");cv.width=im.width*s;cv.height=im.height*s;
+      cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);
+      CFG.adImage=cv.toDataURL("image/jpeg",.82);
+      G("a_prev").innerHTML='<img class="thumb" src="'+CFG.adImage+'" alt="">';toast("پوستر آماده شد");
+    };im.src=URL.createObjectURL(f);
+  };
+  G("a_clr").onclick=()=>{CFG.adImage="";G("a_prev").innerHTML=""};
+  G("a_prevb").onclick=()=>{Object.assign(CFG,read());try{localStorage.setItem("fal-preview",JSON.stringify(read()))}catch(e){}toast("پیش‌نمایش ذخیره شد")};
+  G("a_dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(read(),null,1)],{type:"application/json"}));a.download="config.json";a.click()};
+  G("a_reset").onclick=()=>{try{localStorage.removeItem("fal-preview")}catch(e){}toast("پاک شد، صفحه رو دوباره باز کن")};
+  G("a_back").onclick=()=>{location.href=location.pathname};
+}
+
+/* ---------- start ---------- */
+(async()=>{
+  await loadCfg();
+  if(/[?&]admin/.test(location.search)){admin();return}
+  const p=decodeURIComponent(location.hash.replace(/^#/,"")).split("|");
+  const m=+p[1],d=+p[2],y=+p[3]||0,n=norm(p[0]||"");
+  if(n&&m>=0&&m<12&&d>=1&&d<=31&&(p.length===3||p.length===4))show(n,m,d,y>1300&&y<1600?y:0,true);else home();
+})();
+</script>
+</body>
+</html>
